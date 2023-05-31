@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/js/splide-4.1.3/dist/css/splide.min.css">
+
+    <title>Document</title>
+  </head>
+  <style>
+   
+    .navbar {
+      background-image: url("https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/platform-mweb-high/hero-banner/2022/07/18/897ebe40-0e9b-40b1-8a39-7ef03ca3444d-1658117837173-81a0774262fc44bfde4ebb9345a51997.png?w=1024");
+      background-size: cover;
+    }
+
+    .bg-transpa {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .borders-blues{
+      border:1px solid #3d93f8;
+    }
+
+    .border-grays{
+      border:1px solid #d8dce8;
+    }
+
+    .promo h1 {
+      color: #171717;
+    }
+
+    .text-blacks{
+      color: #171717;
+    }
+    .text-grays{
+      color: #71747d;
+    }
+    .text-salmons{
+      color : #f58059
+    }
+    .footer-mobile{
+      background:#f8f9fd url('https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/platform-mweb-high/core/2022/11/21/56e14c91-1046-4f08-8981-7a4b245e024d-1668999504511-e95c526677bcd3ca0134b2bbae483128.png') repeat-x bottom ;
+    }
+
+    @media (min-width: 768px) {
+      .icons {
+        font-size: 35px;
+      }
+      
+  }
+ 
+      
+    
+  </style>
+
+  <body>
+    <div class="navbar w-full h-full">
+      <!-- Content for navbar -->
+      <div class="content-navbar">
+        <div class="md:flex md:justify-around content-center pt-6">
+          <img
+            src="/static/img/tiketdotcom.png"
+            class="pl-4 md:pl-0 w-30 h-5 md:w-36 md:h-8"
+            alt=""
+          />
+          <ul
+            class="hidden text-sm md:flex md:justify-between items-center md:gap-5 text-white font-bold"
+          >
+            <li><a href="">jadi patner tiket.com</a></li>
+            <li><a href="">Elit Reward</a></li>
+            <li><a href="">Cek Order</a></li>
+            <li><a href="">IDR</a></li>
+            {{ if .is_login}}
+            <li>
+              <a href="#">
+                <img src="{{.img}}" class="w-7 h-7 rounded-full" alt="">
+              </a>
+            </li>
+            {{else}}
+            <li><a href="/login">Masuk</a></li>
+            <li>
+              <a href="/register" class="w-4 h-4 bg-blue-600 p-2 pl-4 pr-4 rounded"
+                >Daftar</a
+              >
+            </li>
+            {{end}}
+          </ul>
+        </div>
+      </div>
+      <!-- end -->
+
+      <!-- Title and logo in under search -->
+      <div class="content-1 w-full pb-6 h-full md:mt-20">
+        <div class="text-lg md:text-3xl mt-10 mb-7 md:mt-12 text-white text-center font-bold"> 
+          <span class="font-normal">Hai Kamu , </span>mau kemana ?
+        </div>
+        <div
+          class="content-1-serach m-auto flex w-80 md:w-1/2 rounded-full h-full pt-3 pb-3 pl-3 pr-3 bg-white"
+        >
+          <div class="material-icons text-gray-400 pr-2 icons">search</div>
+          <input
+            type="text"
+            class="w-full flex-1 gap-4 text-sm md:text-2xl focus:outline-none"
+            placeholder="Masukan destinasi disini"
+          />
+        </div>
+
+        <!--content for icon  -->
+        <div class="hidden md:flex md:justify-center">
+          <div class="flex justify-between md:mt-14 md:mb-32 w-1/2">
+            <div class="text-center">
+              <a href="/search-tiket">
+                <div
+                  class="min-w-fit min-h-fit rounded-full p-3 flex justify-center bg-transpa hover:bg-white duration-75"
+                >
+                  <img src="/static/img/pesawat.png" class="w-10 h-10 " alt="" />
+                </div>
+                <span class="text-md text-white font-semibold">Pesawat</span>
+              </a>
+            </div>
+
+            <div class="text-center">
+              <a href="#">
+                <div
+                  class="min-w-fit min-h-fit rounded-full p-3 flex justify-center bg-transpa hover:bg-white duration-75"
+                >
+                  <img src="/static/img/hotel.png" class="w-10 h-10" alt="" />
+                </div>
+                <span class="text-md text-white font-semibold">Hotel</span>
+              </a>
+            </div>
+
+            <div class="text-center">
+              <a href="#">
+                <div
+                  class="min-w-fit min-h-fit rounded-full p-3 flex justify-center bg-transpa hover:bg-white duration-75"
+                >
+                  <img src="/static/img/todo.png" class="w-10 h-10 " alt="" />
+                </div>
+                <span class="text-md text-white font-semibold">To Do</span>
+              </a>
+            </div>
+
+            <div class="text-center">
+              <a href="#">
+                <div
+                  class="min-w-fit min-h-fit rounded-full p-3 flex justify-center bg-transpa hover:bg-white duration-75"
+                >
+                  <img src="/static/img/kereta.png" class="w-10 h-10" alt="" />
+                </div>
+                <span class="text-md text-white font-semibold">Kreta Api</span>
+              </a>
+            </div>
+
+            <div class="text-center">
+              <a href="#">
+                <div
+                  class="min-w-fit min-h-fit rounded-full p-3 flex justify-center bg-transpa hover:bg-white duration-75"
+                >
+                  <img src="/static/img/pesawat.png" class="w-10 h-10 " alt="" />
+                </div>
+                <span class="text-md text-white font-semibold">Pesawat</span>
+              </a>
+            </div>
+
+            <div class="text-center">
+              <a href="#">
+                <div
+                  class="min-w-fit min-h-fit rounded-full p-3 flex justify-center bg-transpa hover:bg-white duration-75"
+                >
+                  <img src="/static/img/event.png" class="w-10 h-10 " alt="" />
+                </div>
+                <span class="text-md text-white font-semibold">Event</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end -->
+    </div>
+    <!-- content for icon -->
+    <section
+      class="w-full h-full flex justify-center mt-5 md:hidden"
+      id="icons-content"
+    >
+      <div
+        class="w-1/2 h-full grid grid-cols-3 text-center gap-4 justify-items-center bg-white"
+      >
+        <div class="">
+          <img src="/static/img/pesawat.png" class="w-10" alt="" />
+          <span class="text-sm">Pesawat</span>
+        </div>
+
+        <div class="">
+          <img src="/static/img/hotel.png" class="w-10" alt="" />
+          <span class="text-sm">Hotel</span>
+        </div>
+
+        <div class="">
+          <img src="/static/img/todo.png" class="w-10" alt="" />
+          <span class="text-sm">To Do</span>
+        </div>
+        <div class="">
+          <img src="/static/img/kereta.png" class="w-10" alt="" />
+          <span class="text-sm">Kreta Api</span>
+        </div>
+        <div class="">
+          <img src="/static/img/event.png" class="w-10" alt="" />
+          <span class="text-sm">Sewa Mobil</span>
+        </div>
+        <div class="">
+          <img src="/static/img/event.png" class="w-10" alt="" />
+          <span class="text-sm">Event</span>
+        </div>
+      </div>
+    </section>
+    <!-- end -->
+
+    <!-- Promo -->
+    <section id="Promo" class="md:mt-10 container mx-auto promo">
+      <div class="md:w-full w-full md:flex justify-start gap-16  inline">
+        <div class="flex gap-5  items-center md:justify-between md:block">
+          <img src="/static/img/persen.png" class="w-15" alt="" />
+          <h1 class="md:text-4xl md:mb-9 md:mt-5 font-semibold">
+            Cek promo <span class="md:block"> sebelum<span class="hidden md:inline">....</span> <span class="inline md:hidden"> bepergi</span>  </span> <span class="md:hidden">an</span> 
+            <span class="md:hidden">kuy!</span>
+          </h1>
+          <a href="#" class="p-3 hidden mt-52  md:inline rounded-md bg-blue-200 font-semibold hover:bg-blue-300 duration-75  text-blue-700">Lihat semua promo</a>
+        </div>
+
+       <div class="">
+        <div class="">
+          <div class="md:flex  hidden md:gap-4 gap-2 mt-5 md:mt-0">
+            <div class="">
+              <a href="" class="pt-2 pb-2 pl-4 pr-4 borders-blues text-sm border-1 rounded-full text-blue-600 bg-blue-200">Semua</a>
+            </div>
+  
+            <div class="">
+              <a href="" class="pt-2 pb-2 pl-4 pr-4 border-grays text-sm rounded-full">Hotel</a>
+            </div>
+  
+            <div class="">
+              <a href="" class="pt-2 pb-2 pl-4 pr-4 border-grays text-sm rounded-full">Villa&Apt.</a>
+            </div>
+  
+            <div class="">
+              <a href="" class="pt-2 pb-2 pl-4 pr-4 border-grays text-sm rounded-full ">To Do</a>
+            </div>
+  
+            <div class="">
+              <a href="" class="pt-2 pb-2 pl-4 pr-4  border-grays text-sm  rounded-full">Kreta Api</a>
+            </div>
+  
+            <div class="">
+              <a href="" class="pt-2 pb-2 pl-4 pr-4  border-grays text-sm  rounded-full ">Sewa Mobil</a>
+            </div>
+  
+            <div class="">
+              <a href="" class="pt-2 pb-2 pl-4 pr-4 border-grays text-sm  rounded-full ">Jemputan Bandara</a>
+            </div>
+          </div>
+
+          <div class="md:hidden">
+            <div class="splide" id="splide">
+              <div class="splide__track pt-5 pb-5">
+                <ul class="splide__list ">
+                  <li class="splide__slide ">
+                    <div class="">
+                      <a href="" class="pt-1  pb-1 pl-2 pr-2 borders-blues text-sm border-1 rounded-full text-blue-600 bg-blue-200">Semua</a>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="">
+                      <a href="" class="pt-1 pb-1 pl-2 pr-2 border-grays text-sm border-1 rounded-full">Hotel</a>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="">
+                      <a href="" class="pt-1 pb-1 pl-2 pr-2 border-grays text-sm border-1 rounded-full">Vila&Apt</a>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="">
+                      <a href="" class="pt-1 pb-1 pl-2 pr-2 border-grays text-sm border-1 rounded-full">To DO</a>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="">
+                      <a href="" class="pt-1 pb-1 pl-2 pr-2 border-grays text-sm border-1 rounded-full">Kereta Api</a>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="">
+                      <a href="" class="pt-1 pb-1 pl-2 pr-2 border-grays text-sm border-1 rounded-full">Sewa Mobil</a>
+                    </div>
+                  </li>
+                  <li class="splide__slide">
+                    <div class="">
+                      <a href="" class="pt-1 pb-1 pl-2 pr-2 border-grays text-sm border-1 rounded-full">Jemputan Bandara</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+          </div>
+        </div> 
+          
+        <div class="">
+          <div class="splide md:mt-5 mt-2" id="splide1">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <a href="#">
+                      <img class="w-72 rounded-lg" src="/static/img/1f825e86-1020-4469-bd9a-fbc2b9ce86b0-1671697086668-ab2938c89b1e73974c8ee9d1d95daf35.png" alt="">
+                    </a>
+                  </li>
+                  <li class="splide__slide">
+                    <a href="#">
+                      <img class="w-72 rounded-lg" src="/static/img/7d1283f0-8446-4183-ac73-daa4df244060-1669261129130-7f5bcb83767aa019d8160c695bb633c0.png" alt="">
+                    </a>
+                  </li>
+                  <li class="splide__slide">
+                    <a href="#">
+                      <img class="w-72 rounded-lg" src="/static/img/7d1283f0-8446-4183-ac73-daa4df244060-1669261129130-7f5bcb83767aa019d8160c695bb633c0.png" alt="">
+                  </li>
+                </ul>
+              </div>
+          </div>
+        </div>
+           <!-- crousel -->
+           <div class="md:hidden w-full my-2  h-auto text-center bg-blue-200 font-semibold hover:bg-blue-300 duration-75  text-blue-700">
+            <a href="" class="leading-9">Lihat semua promo</a>
+           </div>
+           <!-- end -->
+      </div>
+      </div>
+    </section>
+
+    <!-- Section best Hotel  -->
+    <section id="hotel" class="hotelbest w-full md:container md:mx-auto mt-20">
+      <div class="">
+        <h4 class="font-bold text-2xl pb-2  text-blacks">Serius, aktivitas ini seru, loh !</h4>
+        <span class="text-grays text-base mt-5">Mau yang menegangkan? Atau yang bikin relaks? Temuin semuanya di sini</span>
+      </div>
+      <div class="" id="">
+        <div class="splide" id="splide3">
+          <div class="splide__track py-5 ">
+            <ul class="splide__list ">
+              <li class="splide__slide ">
+                <div class="">
+                  <a href="" class="pt-2 pb-2 px-5 borders-blues text-1xl border-1 rounded-full text-blue-600 bg-blue-200">Ataraksi Domestik</a>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="">
+                  <a href="" class="p-2 px-5 border-grays text-1xl border-1 rounded-full">Ataraksi Internasional</a>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="">
+                  <a href="" class="p-2 px-5 border-grays text-1xl border-1 rounded-full">Event</a>
+                </div>
+              </li>
+              <li class="splide__slide">
+                <div class="">
+                  <a href="" class="p-2 px-5 border-grays text-1xl border-1 rounded-full">Tempat Bermain</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+      </div>
+      </div>
+
+          <!--Carousel Dufan  -->
+      <div class="splide" id="splide4">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <div class="w-52 rounded-b-lg  h-auto shadow-2xl">
+                <img src="/static/img/ancol.jpg" class="rounded-t-lg" alt="">
+                <div class="p-3">
+                  <h4 class="text-sm font-bold">Tiket Dunia Fantasi (Dufan) Ancol</h4>
+                  <div class="text-xs mt-1 text-grays">Pedemangan, Jakarta Utara</div>
+                  <div class="text-xs text-grays"> <span class="font-medium">4.4</span> /5 (7496 Review)</div>
+                  <div class="text-lg font-medium mt-5 text-salmons">IDR 190.000</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="w-52 rounded-b-lg  h-auto shadow-2xl">
+                <img src="/static/img/ancol.jpg" class="rounded-t-lg" alt="">
+                <div class="p-3">
+                  <h4 class="text-sm font-bold">Tiket Dunia Fantasi (Dufan) Ancol</h4>
+                  <div class="text-xs mt-1 text-grays">Pedemangan, Jakarta Utara</div>
+                  <div class="text-xs text-grays"> <span class="font-medium">4.4</span> /5 (7496 Review)</div>
+                  <div class="text-lg font-medium mt-5 text-salmons">IDR 190.000</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="w-52 rounded-b-lg  h-auto shadow-2xl">
+                <img src="/static/img/ancol.jpg" class="rounded-t-lg" alt="">
+                <div class="p-3">
+                  <h4 class="text-sm font-bold">Tiket Dunia Fantasi (Dufan) Ancol</h4>
+                  <div class="text-xs mt-1 text-grays">Pedemangan, Jakarta Utara</div>
+                  <div class="text-xs text-grays"> <span class="font-medium">4.4</span> /5 (7496 Review)</div>
+                  <div class="text-lg font-medium mt-5 text-salmons">IDR 190.000</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="w-52 rounded-b-lg  h-auto shadow-2xl">
+                <img src="/static/img/ancol.jpg" class="rounded-t-lg" alt="">
+                <div class="p-3">
+                  <h4 class="text-sm font-bold">Tiket Dunia Fantasi (Dufan) Ancol</h4>
+                  <div class="text-xs mt-1 text-grays">Pedemangan, Jakarta Utara</div>
+                  <div class="text-xs text-grays"> <span class="font-medium">4.4</span> /5 (7496 Review)</div>
+                  <div class="text-lg font-medium mt-5 text-salmons">IDR 190.000</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="w-52 rounded-b-lg  h-auto shadow-2xl">
+                <img src="/static/img/ancol.jpg" class="rounded-t-lg" alt="">
+                <div class="p-3">
+                  <h4 class="text-sm font-bold">Tiket Dunia Fantasi (Dufan) Ancol</h4>
+                  <div class="text-xs mt-1 text-grays">Pedemangan, Jakarta Utara</div>
+                  <div class="text-xs text-grays"> <span class="font-medium">4.4</span> /5 (7496 Review)</div>
+                  <div class="text-lg font-medium mt-5 text-salmons">IDR 190.000</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="w-52 rounded-b-lg  h-auto shadow-2xl">
+                <img src="/static/img/ancol.jpg" class="rounded-t-lg" alt="">
+                <div class="p-3">
+                  <h4 class="text-sm font-bold">Tiket Dunia Fantasi (Dufan) Ancol</h4>
+                  <div class="text-xs mt-1 text-grays">Pedemangan, Jakarta Utara</div>
+                  <div class="text-xs text-grays"> <span class="font-medium">4.4</span> /5 (7496 Review)</div>
+                  <div class="text-lg font-medium mt-5 text-salmons">IDR 190.000</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="w-52 rounded-b-lg  h-auto shadow-2xl">
+                <img src="/static/img/ancol.jpg" class="rounded-t-lg" alt="">
+                <div class="p-3">
+                  <h4 class="text-sm font-bold">Tiket Dunia Fantasi (Dufan) Ancol</h4>
+                  <div class="text-xs mt-1 text-grays">Pedemangan, Jakarta Utara</div>
+                  <div class="text-xs text-grays"> <span class="font-medium">4.4</span> /5 (7496 Review)</div>
+                  <div class="text-lg font-medium mt-5 text-salmons">IDR 190.000</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="w-52 rounded-b-lg  h-auto shadow-2xl">
+                <img src="/static/img/ancol.jpg" class="rounded-t-lg" alt="">
+                <div class="p-3">
+                  <h4 class="text-sm font-bold">Tiket Dunia Fantasi (Dufan) Ancol</h4>
+                  <div class="text-xs mt-1 text-grays">Pedemangan, Jakarta Utara</div>
+                  <div class="text-xs text-grays"> <span class="font-medium">4.4</span> /5 (7496 Review)</div>
+                  <div class="text-lg font-medium mt-5 text-salmons">IDR 190.000</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="w-52 rounded-b-lg  h-auto shadow-2xl">
+                <img src="/static/img/ancol.jpg" class="rounded-t-lg" alt="">
+                <div class="p-3">
+                  <h4 class="text-sm font-bold">Tiket Dunia Fantasi (Dufan) Ancol</h4>
+                  <div class="text-xs mt-1 text-grays">Pedemangan, Jakarta Utara</div>
+                  <div class="text-xs text-grays"> <span class="font-medium">4.4</span> /5 (7496 Review)</div>
+                  <div class="text-lg font-medium mt-5 text-salmons">IDR 190.000</div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="w-52 rounded-b-lg  h-auto shadow-2xl">
+                <img src="/static/img/ancol.jpg" class="rounded-t-lg" alt="">
+                <div class="p-3">
+                  <h4 class="text-sm font-bold">Tiket Dunia Fantasi (Dufan) Ancol</h4>
+                  <div class="text-xs mt-1 text-grays">Pedemangan, Jakarta Utara</div>
+                  <div class="text-xs text-grays"> <span class="font-medium">4.4</span> /5 (7496 Review)</div>
+                  <div class="text-lg font-medium mt-5 text-salmons">IDR 190.000</div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End -->
+    </section>
+    <!-- end -->
+
+    <section id="banner1" class="container   mx-auto mt-16 md:mt-24">
+      <div class="banner1_1">
+        <img class="w-full h-4/5 object-cover" src="/static/img/504ce9c5-af0c-4ff2-b15e-6aebe91b5b49-1671807770524-7bb2bdaa359db56730eaeb59f1eee7ca.jpg" alt="">
+      </div>
+    </section>
+
+    <!-- Mobile Footer -->
+    <!-- <section class="container sm:hidden w-full h-auto footer-mobile">
+      <div class="w-48 h-48 bg-red-600"></div>
+      <div class="w-48 h-48 bg-red-600"></div>
+      <div class="w-48 h-48 bg-red-600"></div>
+      <div class="w-48 h-48 bg-red-600"></div>
+    </section> -->
+    <!--End  -->
+
+    <!-- Desktop Footer -->
+    <section class="container mx-auto md:mt-10" id="footer">
+      <div class=" hidden md:flex  md:flex-row lg:gap-x-24 gap-x-10 ">
+        <div class="footer_1">
+          <ul class="">
+            <li class="mb-7">
+              <img class="w-40 h-11 object-contain" src="/static/img/7379dfd8-c9cc-4fb9-896f-6374a766cefc-1598927204969-fab786a46eee63c306f89837093520a4.jpg" alt="">
+            </li>
+            <li class="block">
+              <div class="flex gap-5 justify-items-center">
+                <img src="/static/img/message.png" class="w-11 h-11 inline-block" alt="">
+                <div class="text-sm">
+                  <span class="block">Whatsapp</span>
+                  <span class="">0858 1150 0888</span>
+                </div>
+              </div>
+            </li>
+            <li class="block">
+              <div class="flex md:gap-5 justify-items-center">
+                <img src="/static/img/email.png" class="w-11 h-11 inline-block" alt="">
+                <div class="text-sm">
+                  <span class="block">Email</span>
+                  <span class="block">0858 1150 0888</span>
+                </div>
+              </div>
+            </li>
+  
+            <li class="block">
+              <div class="flex md:gap-5 justify-items-center">
+                <img src="/static/img/telephone.png" class="w-11 h-11 inline-block" alt="">
+                <div class="text-sm">
+                  <span class="block">Call Center</span>
+                  <span class="block">0804 1500 878</span>
+                  <span class="block">(Indonesia only)</span>
+                  <span class="block">+6221 3973 0888</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="footer_2">
+          <ul>
+            <li class="mt-3 mb-7 font-semibold">Perusahaan</li>
+            <li class="mb-3">Blog</li>
+            <li class="mb-3">Karir</li>
+            <li class="mb-3">Corporate</li>
+            <li class="mb-3">patner</li>
+            <li class="mb-3">Elit Reward</li>
+            <li class="mb-3">Perlindungan</li>
+            <li class="mb-3">Cicilan</li>
+          </ul>
+        </div>
+        <div class="footer_3 inline ">
+          <ul>
+            <li class="mt-3 mb-7 font-semibold">Produk</li>
+            <li class="mb-3">Pesawat</li>
+            <li class="mb-3">Hotel</li>
+            <li class="mb-3">ToDo</li>
+            <li class="mb-3">Kereta Api</li>
+            <li class="mb-3">Sewa Mobil</li>
+            <li class="mb-3">Event</li>
+          </ul>
+        </div>
+        <div class="footer_4 inline">
+          <ul>
+            <li class="mt-3 mb-7 font-semibold">Dukungan</li>
+            <li class="mb-3">Pusat Bantuan</li>
+            <li class="mb-3">Group Bokking</li>
+            <li class="mb-3">Kebijakan Privasi</li>
+            <li class="mb-3">Syarat dan Ketentuan</li>
+            <li class="mb-3">Daftarkan Hotel Anda</li>
+            <li class="mb-3">Daftarkan aktivitas/Event Anda</li>
+            <li class="mb-3">Tiket Anti Galau</li>
+          </ul>
+        </div>
+        <div class="footer_5 inline ">
+          <ul>
+            <li class="mt-3 mb-7 font-semibold">Download Apps Tiket.com</li>
+            <li class="mb-3">
+              <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/platform-mweb-low/assets/2020/12/10/688ad290-7149-4465-b118-23ea3966ccda-1607591614346-f4450af6b8627940554c4f7ef1a63379.png" alt="">
+            </li>
+
+            <li>
+              <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/platform-mweb-low/assets/2020/12/10/48426f93-bbfc-49b4-ae59-291676986d24-1607591614088-d2285921c100b89f80b011edabd8ccad.png" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class=" border border-dashed hidden md:block border-gray-400" ></div>
+      <div class="mitra my-5 hidden md:flex">
+        <div class="mitra1">
+          <ul>
+            <li class="block font-semibold"> Mitra</li>
+            <li class="mt-3"> 
+              <img src="/static/img/brand_logo_1.png" class="w-2/3" alt="">
+            </li>
+          </ul>
+        </div>
+        <div class="mitra2 ">
+          <ul>
+            <li class="block font-semibold"> Amankan Transaksi</li>
+            <div class="flex mt-3">
+              <li class="inline">
+                <img src="/static/img/brand_logo_5.png" class="w-2/3" alt="">
+              </li>
+              <li class="inline">
+                <img src="/static/img/brand_logo_2.png" class="w-2/3" alt="">
+              </li>
+              <li class="inline">
+                <img src="/static/img/brand_logo_4.png" class="w-2/3" alt="">
+              </li>
+              <li class="inline">
+                <img src="/static/img/brand_logo_3.png" class="w-2/3" alt="">
+              </li>
+            </div>
+          </ul>
+        </div>
+        <div class="mitra3 ">
+          <ul class="">
+            <li class="block font-semibold">Penghargaan</li>
+            <div class="grid grid-cols-2 justify-start mt-3">
+              <li class="">
+                <img src="/static/img/brand_logo_6.png" class="w-2/3" alt="">
+              </li>
+              <li class="">
+                <img src="/static/img/brand_logo_6.png" class="w-2/3" alt="">
+              </li>
+              
+              <li class="">
+                <img src="/static/img/brand_logo_6.png" class="w-2/3" alt="">
+              </li>
+              
+            </div>
+          </ul>
+        </div>
+
+        <div class="mitra4">
+          <ul>
+            <div class="w-full">
+              <li class="font-semibold">Ikuti Kami</li>
+              <div class=" hidden md:flex gap-3 flex-wrap mt-3">
+                <li>
+                  <div class="w-7 h-7 border border-gray-400 flex justify-center items-center rounded-full">
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="w-7 h-7 border border-gray-400 flex justify-center items-center rounded-full">
+                    <i class="fa-brands fa-twitter"></i>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="w-7 h-7 border border-gray-400 flex justify-center items-center rounded-full">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="w-7 h-7 border border-gray-400 flex justify-center items-center  rounded-full">
+                    <i class="fa-brands fa-youtube"></i>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="w-7 h-7 border border-gray-400 flex justify-center items-center  rounded-full">
+                    <i class="fa-brands fa-instagram"></i>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="w-7 h-7 border border-gray-400 flex justify-center items-center  rounded-full">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </div>
+                </li>
+
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class=" border border-dashed  border-gray-400 border-l-4 hidden md:block" ></div>
+    </section>
+    
+    <section class="container mx-auto">
+      <div class="hidden w-full md:flex justify-center items-center gap-4 my-7">
+            <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 18" width="168"><title>Blibli tiket group</title><path d="M90.8362 11.6854c-.5692.946-1.5349 1.4953-2.8766 1.4953-2.0838 0-3.8017-1.363-3.8017-3.98743 0-2.47181 1.7179-4.00779 3.7712-4.00779 1.4434 0 2.4395.6917 2.9274 1.51564h.0305l-.0203-1.36306h1.2401v6.21514c0 1.7699-.2541 2.7058-.7522 3.3975-.5083.7018-1.4637 1.6173-3.4662 1.6173-1.9821 0-3.2934-1.1087-3.4154-1.1901l.6201-.8952c.5184.4069 1.6264 1.0274 2.8563 1.0274 2.1651 0 2.9071-1.4139 2.9071-3.3873v-.4374h-.0203Zm.0813-2.51247c0-1.80046-1.0775-2.92955-2.775-2.92955-1.7788 0-2.7038 1.29185-2.7038 2.92955 0 1.64787.9555 2.96007 2.7445 2.96007 1.7991 0 2.7343-1.3122 2.7343-2.96007ZM94.1499 5.33806H95.39v1.34271c.3659-.95617 1.1283-1.49529 2.0024-1.49529.5185 0 .8437.13224.8437.13224l-.0813 1.17996h-.0508c-.2643-.12207-.6201-.15258-.8539-.15258-.7217 0-1.1892.5086-1.3315.69169-.3152.45775-.5184.90532-.5184 2.10562v4.08919h-1.2401V5.33806h-.0102ZM98.5004 9.30516c0-2.41077 1.7996-4.11968 4.1066-4.11968 2.307 0 4.117 1.71908 4.117 4.11968 0 2.42094-1.82 4.08914-4.117 4.08914-2.307 0-4.1066-1.6682-4.1066-4.08914Zm6.9526-.03051c0-1.69874-1.098-3.01093-2.846-3.01093s-2.8258 1.31219-2.8258 3.01093c0 1.67835 1.0778 3.03125 2.8258 3.03125s2.846-1.3529 2.846-3.03125ZM114.601 5.31772v7.91388h-1.209l-.021-1.2614c-.355.8443-1.362 1.3936-2.49 1.3936-2.256 0-2.805-1.3834-2.805-3.2652V5.31772h1.26v4.69948c0 1.4648.468 2.2684 1.931 2.2684 1.413 0 2.104-1.2105 2.104-2.5939V5.31772h1.23ZM116.665 5.31772h1.24v1.39357h.02c.437-.74256 1.484-1.53598 2.877-1.53598 2.419 0 3.832 1.74959 3.832 4.08917 0 2.33962-1.596 4.11972-3.802 4.11972-1.158 0-2.307-.4578-2.907-1.5157l-.02-.0203v4.5265h-1.24V5.31772Zm6.678 3.95693c0-1.71908-.996-3.04145-2.744-3.04145-1.586 0-2.745 1.33254-2.745 3.04145 0 1.69875.945 3.03125 2.704 3.03125 1.758 0 2.785-1.3325 2.785-3.03125ZM54.1617 12.428c0 .1424-.0305.2746-.0813.3967-.0509.122-.1423.2339-.2745.3255-.1321.0915-.3049.1627-.5387.2238-.2338.0508-.5286.0813-.8945.0813-.7827 0-1.3723-.1932-1.7788-.5899-.4066-.3866-.6099-.9664-.6099-1.7293V6.71127h-.5388c-.2642 0-.498-.09155-.681-.28482-.183-.19327-.2846-.42722-.2846-.71204 0-.2543.0915-.47808.2846-.67135.183-.1831.4168-.28483.681-.28483h.5388V3.44604c0-.30516.1118-.55946.3252-.78325.2135-.21361.4879-.3255.8132-.3255.305 0 .5591.11189.7725.3255.2135.21362.3253.47809.3253.78325v1.31219h.8742c.2541 0 .4777.09156.6709.28483.1829.19327.2846.42722.2846.6917 0 .26447-.0915.49843-.2846.68152-.183.1831-.4066.28482-.6709.28482h-.8742v3.8247c0 .3357.0813.5798.2541.7222.1728.1424.3456.2136.5184.2136H53.1859c.3151 0 .559.0916.7318.2848.1627.1831.244.4171.244.6816ZM57.3534 12.2347c0 .3052-.1118.5595-.3253.7833-.2134.2136-.4777.3255-.7928.3255-.305 0-.5591-.1119-.7827-.3255-.2135-.2137-.3253-.4781-.3253-.7833V5.74492c0-.30516.1118-.55946.3253-.77307.2135-.21361.4879-.31534.8132-.31534.3049 0 .559.10173.7725.31534.2135.21361.3151.46791.3151.77307v6.48978ZM66.1154 12.2144c0 .2746-.1016.5289-.3049.7629-.2033.2441-.4676.356-.7929.356-.1728 0-.3456-.0407-.5184-.1119-.1728-.0712-.3049-.1933-.4167-.356l-1.9821-2.89907-1.0165 1.08837v1.18c0 .3052-.1118.5595-.3253.7833-.2135.2136-.4777.3255-.7928.3255-.305 0-.5591-.1119-.7827-.3255-.2135-.2137-.3253-.4781-.3253-.7833V2.52038c0-.30516.1118-.55946.3253-.77307.2134-.21362.4879-.31533.8132-.31533.3049 0 .559.10171.7725.31533.2134.21361.3151.46791.3151.77307v6.01169l2.9986-3.53987c.2033-.23396.4472-.34586.7522-.34586.2846 0 .5285.10172.7318.31533.2135.21362.3151.45775.3151.73239 0 .24413-.0813.46792-.2439.67136l-1.9618 2.24803 2.2261 2.98045c.1423.1932.2134.3967.2134.6205ZM74.8774 8.69482c0 .26447-.1016.5086-.2947.71204-.1932.20345-.4473.30517-.7319.30517H68.616c.0305.26447.1118.51877.2337.76287.122.2442.2847.4476.488.6205.2032.173.4472.3154.7318.4171.2846.1017.6099.1627.9758.1627.2338 0 .4981-.0305.7929-.1017.2948-.0712.5794-.1729.8538-.3153.1423-.0712.2846-.1017.4371-.1017.2338 0 .4473.0813.6505.2441.2033.1627.2948.3764.2948.651 0 .295-.1321.5188-.3862.6714-.4168.2543-.8844.4475-1.3723.5594-.498.1119-1.0063.1729-1.5145.1729-.6404 0-1.2401-.1017-1.7992-.3153-.559-.2136-1.0368-.5086-1.4332-.8951-.4066-.3866-.7217-.8545-.9453-1.4038-.2237-.5493-.3456-1.15959-.3456-1.84112 0-.61032.1118-1.17996.3252-1.72925.2135-.53912.5184-1.0172.9047-1.41391.3863-.39671.8437-.71205 1.3824-.94601.5387-.23395 1.1283-.34584 1.7687-.34584.4777 0 .925.0712 1.3417.20344.4168.13224.7929.3255 1.1283.56963.3354.24413.6302.5493.8843.90532.2542.35602.4574.75273.5998 1.17995.0609.20344.1118.40689.1626.63067.0711.21362.1016.42723.1016.64084Zm-2.1244-.49843c-.0102-.20344-.061-.40688-.1423-.63067-.0813-.22378-.2033-.42722-.3659-.60015-.1627-.1831-.3761-.33568-.6404-.45774-.2643-.12207-.5794-.1831-.9352-.1831-.3456 0-.6505.06104-.9046.17293-.2541.12206-.4574.26447-.6201.44757-.1626.18309-.2948.38654-.3862.60015-.0915.22379-.1525.4374-.1728.65101h4.1675ZM80.4376 12.428c0 .1424-.0305.2746-.0814.3967-.0508.122-.1423.2339-.2744.3255-.1321.0915-.3049.1627-.5387.2238-.2338.0508-.5286.0813-.8945.0813-.7827 0-1.3723-.1932-1.7789-.5899-.4066-.3866-.6099-.9664-.6099-1.7293V6.71127h-.5387c-.2643 0-.4981-.09155-.681-.28482-.183-.19327-.2846-.42722-.2846-.71204 0-.2543.0914-.47808.2846-.67135.1829-.1831.4167-.28483.681-.28483h.5387V3.44604c0-.30516.1017-.55946.3253-.78325.2135-.21361.4879-.3255.8132-.3255.3049 0 .5591.11189.7725.3255.2135.21362.3253.47809.3253.78325v1.31219h.8742c.2541 0 .4777.09156.6708.28483.183.19327.2847.42722.2847.6917 0 .26447-.0915.49843-.2847.68152-.1829.1831-.4066.28482-.6708.28482h-.8742v3.8247c0 .3357.0813.5798.2541.7222.1728.1424.3456.2136.5184.2136h.183c.3151 0 .559.0916.7318.2848.1627.1831.2542.4171.2542.6816ZM26.6864 7.464c-.2033-.51877-.4879-.96635-.8336-1.33254-.3456-.36619-.7623-.65101-1.2299-.85445-.0101 0-.6709-.3255-1.4434-.30516-.4676.01017-.7217.12206-.925.23396-.0203.01017-.0406.02034-.0508.03051-.0813.06103-.2948.20344-.4879.4374-.3659.44757-.4168 1.16979-.3456 1.68856l.0305.20344.1525-.13223c.1321-.12207.3862-.295.742-.38654.1931-.05086.3964-.05086.5895-.02034.4676.06103.8742.26447 1.1995.61032.3964.41705.5895.95617.5895 1.60718 0 .65102-.2033 1.17999-.5997 1.58689-.3964.4068-.9046.6103-1.5145.6103s-1.1182-.1933-1.5044-.59c-.6302-.6307-.5794-1.86149-.5794-1.87166V1.70662c0-.04069-.0203-.07121-.061-.08138l-.2541-.08137c-.2135-.06104-.4676-.10172-.742-.10172-.3761 0-.6811.08137-.8945.23395-.1932.13224-.2948.38654-.2948.74256V8.8474c0 .68153.0711 1.2817.2033 1.7903.1321.4882.3354.9053.5794 1.241.3964.5187.9148.9256 1.5247 1.2003.62.2746 1.3214.417 2.0838.417.62 0 1.2096-.1017 1.7381-.3051.5286-.2035.9962-.4985 1.3824-.8647.3863-.3661.6912-.8137.9149-1.3427.2236-.5289.3354-1.10872.3354-1.73939 0-.66118-.1016-1.26133-.3049-1.78011ZM13.1164 1.54387c-.2236-.06104-.4777-.10172-.7522-.10172-.3761 0-.681.08137-.8945.23395-.1931.13224-.2947.38654-.2947.74256V13.2519h2.2667V1.63542l-.3253-.09155ZM15.9016 3.95464c.3557 0 .6607-.12206.9046-.35602.244-.23395.366-.53911.366-.89514 0-.35602-.122-.66118-.366-.90531-.2439-.24413-.5489-.36619-.9046-.36619-.3558 0-.6506.12206-.8945.36619-.2338.24413-.3558.54929-.3558.90531 0 .35603.122.66119.3558.89514.2439.24413.5387.35602.8945.35602ZM15.9727 5.20581c-.3761 0-.681.08137-.8945.23395-.1931.13224-.2948.38654-.2948.74256v7.06958h2.2668V5.39908l-.3151-.09155c-.2338-.07121-.4879-.10172-.7624-.10172ZM29.9492 1.54387c-.2236-.06104-.4777-.10172-.7521-.10172-.3761 0-.6811.08137-.8945.23395-.1932.13224-.2948.38654-.2948.74256V13.2519h2.2667V1.63542l-.3253-.09155ZM32.6836 3.95464c.3557 0 .6607-.12206.9046-.35602.244-.23395.366-.53911.366-.89514 0-.35602-.122-.66118-.366-.90531-.2439-.24413-.5489-.36619-.9046-.36619-.3558 0-.6506.12206-.8945.36619-.2338.24413-.3558.54929-.3558.90531 0 .35603.122.66119.3558.89514.2439.24413.5387.35602.8945.35602ZM32.7547 5.20581c-.3761 0-.681.08137-.8945.23395-.1931.13224-.2948.38654-.2948.74256v7.06958h2.2668V5.39908l-.3151-.09155c-.2338-.07121-.4879-.10172-.7624-.10172ZM9.82304 7.464c-.2033-.51877-.48791-.96635-.83351-1.33254-.3456-.36619-.76236-.65101-1.22994-.85445-.01016 0-.67087-.3255-1.44339-.30516-.46758.01017-.7217.12206-.92499.23396-.02033.01017-.04066.02034-.05083.03051-.08131.06103-.29477.20344-.4879.4374-.36594.44757-.41676 1.16979-.34561 1.68856l.0305.20344.15247-.13223c.13214-.12207.38626-.295.74203-.38654.19313-.05086.39642-.05086.58955-.02034.46758.06103.87417.26447 1.19944.61032.39643.41705.58956.95617.58956 1.60718 0 .65102-.2033 1.17999-.59972 1.58689-.39643.4068-.90466.6103-1.51455.6103-.60988 0-1.11812-.1933-1.50438-.59-.63022-.6307-.57939-1.86149-.57939-1.87166V1.70662c0-.04069-.02033-.07121-.06099-.08138l-.25412-.08137c-.21346-.06104-.46758-.10172-.74203-.10172-.37609 0-.68104.08137-.8945.23395-.19313.13224-.29477.38654-.29477.74256V8.8474c0 .68153.07115 1.2817.20329 1.7903.13214.4882.33544.9053.57939 1.241.39643.5187.91483.9256 1.52471 1.2003.62005.2746 1.32142.417 2.08378.417.62005 0 1.2096-.1017 1.73817-.3051.52857-.2035.99615-.4985 1.38241-.8647.38626-.3661.6912-.8137.91482-1.3427.22366-.5289.33546-1.10872.33546-1.73939 0-.66118-.1017-1.26133-.30496-1.78011Z" fill="#007CFF"></path><path d="M41.5067 12.5399c2.8181 0 5.1027-2.2862 5.1027-5.10638 0-2.82017-2.2846-5.10638-5.1027-5.10638-2.8182 0-5.1027 2.28621-5.1027 5.10638 0 2.82018 2.2845 5.10638 5.1027 5.10638Z" fill="#FEDD00"></path></svg>
+            <span class="text-slate-500 text-sm"> <span>&#169;</span>2011-2023 PT. Global Tiket Network. All Rights Reserved.</span>  
+      </div>
+    </section>
+    
+    <!-- JS -->
+    <script src="/static/js/splide-4.1.3/dist/js/splide.js"></script>
+    <script src="https://kit.fontawesome.com/436283f688.js" crossorigin="anonymous"></script>
+    <script>
+    
+
+      //  new Splide('#splide1',{
+      //  perPage: 2,
+      //  gap    : '1rem',
+      //  arrows : false,
+      //  pagination:false,
+      //  autoWidth:  true,
+      //  autoHeight: true,
+      //  padding: { top: 50, bottom: 20 },
+
+      //  }).mount();
+
+      document.addEventListener( 'DOMContentLoaded', function() {
+            var splide = new Splide( '#splide', {
+            perPage: 5,
+          gap    : '1rem',
+          arrows : false,
+          pagination:false,
+          autoWidth:  true,
+          autoHeight: true,
+          padding: { top: 50, bottom: 20 },
+          })
+          splide.mount();
+
+        
+     });
+
+     document.addEventListener( 'DOMContentLoaded', function() {
+      new Splide('#splide1',{
+        pagination:false,
+        arrows : false,
+        width: '100%',
+        perPage:1,
+        autoWidth:  true,
+        gap:'1em',
+        padding: { top: 50, bottom: 20 },
+        breakpoints: {
+          1008: {
+            width: '100%',
+          },
+         }
+        
+       }).mount();
+  } );
+
+  document.addEventListener( 'DOMContentLoaded', function() {
+      new Splide('#splide3',{
+        perPage: 5,
+        pagination:false,
+        arrows : false,
+        autoWidth:  true,
+        perPage:4,
+        gap:'0.5em',
+        padding: { top: 50, bottom: 20 },
+        
+       }).mount();
+  } );
+
+  document.addEventListener( 'DOMContentLoaded', function() {
+      new Splide('#splide4',{
+        perPage: 5,
+        pagination:false,
+        arrows : false,
+        width: '100%',
+        // gap:'1rem',
+        mediaQuery:'max',
+        padding: { top: 50, bottom: 20 },
+        
+        breakpoints: {
+          420: {
+            perPage: 2,
+            gap:'6rem'
+            
+          },
+          640: {
+            perPage: 2,
+            gap:'0.5rem'
+            
+          },
+
+          
+         }
+        
+       }).mount();
+       
+  } );
+
+  
+
+      
+    </script>
+    <!-- end -->
+  </body>
+</html>

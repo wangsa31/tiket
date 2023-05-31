@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/listPlane.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+    <title>Document</title>
+</head>
+<body>
+    <div class=""></div>
+    <!-- small navbar -->
+    <div class="w-full header-color ">
+        <!-- small nav -->
+            <div class="w-full text-xs inline-block align-middle leading-6">
+                <div class="inline-block align-middle ml-10">
+                    <a href="" class="mr-3">Daftarkan Properti Anda</a>
+                    <a href="" class="mr-3">Daftarkan Aktivitas/Event Anda</a>
+                    <a href="" class="mr-3">Promo</a>
+                    <a href="" class="mr-3">Pusat Bantuan</a>
+                </div>
+                <div class="inline-block align-middle float-right clear-both mr-10">
+                    <a href="#" class="inline-block">
+                        <img src="/static/img/indonesia.png" class="w-7 h-7 inline-block align-middle" alt="">
+                            <span class="material-icons inline-block align-middle">expand_more</span>
+                       
+                    </a>
+                    <a href="#" class="inline-block  align-middle">
+                        IDR
+                        <span class="material-icons inline-block align-middle">expand_more</span>
+                    </a>
+                </div>
+            </div>
+        <!-- end -->
+    </div>
+
+    <!-- end -->
+           <!-- big Nav -->
+           <div class="w-full bg-white">
+               <div class="container mx-auto flex items-center pb-3 pt-3 justify-between">
+                   <div class="navbar-nav">
+                     <a href="/tiket">
+                       <img src="/static/img/7379dfd8-c9cc-4fb9-896f-6374a766cefc-1598927204969-fab786a46eee63c306f89837093520a4.jpg" class="w-40 h-10 object-fill" alt="">
+                     </a>
+                   </div>
+                   <div class="text-sm flex gap-4 nav-list">
+                     <div class="under flex items-center gap-4 justify-between">
+                       <a href="">Pesawat</a>
+                       <a href="">Hotel</a>
+                       <a href="">To Do</a>
+                       <a href="">Kereta Api</a>
+                       <a href="">Sewa Mobil</a>
+                       <a href="">Event</a>
+                       <a href="">Tiket+ Service</a>
+                       <a href="">Blibi</a>
+                       <a href="" class="font-semibold">Blibli Tiket Rewards</a>
+                     </div>
+                       {{if .is_login}}
+                       <a href="">
+                         <img src="{{.img}}" alt="" class="rounded-full w-8 h-8 shadow-md">
+                       </a>
+                       {{else}}
+                       <div class="border border-blue-800  p-1 rounded-sm">
+                         <a href="/login" class="text-blue-600">Login</a>
+                       </div>
+           
+                       <div class="bg-blue-500 hover:border-blue-900 p-1 rounded-sm">
+                         <a href="/register" class="text-white">Daftar</a>
+                       </div>
+                      
+                       {{end}}
+                   </div>
+               </div>
+           </div>
+        <!-- end -->
+
+        <section>
+            <div class="w-full inline-block align-middle">
+                <div class=" w-80 inline-block align-top ml-7 mt-5 ">
+                    <div class="">
+                        <span class="text-xl font-open-sans-semibold">Filter</span>
+                        <div class="float-right clear-both">
+                            <a href="" class="text-blue-1 text-base">Reset</a>
+                        </div>
+                        <div class="w-full p-2  h-min bg-white rounded-md">
+                            <div class="block align-middle">
+                                <div class="inline text-lg font-open-sans-semibold mt-3">Transit</div>
+                                <div class="float-right clear-both inline">
+                                    <span class="material-icons text-blue-1  expand-more">expand_more</span>
+                                </div>
+                                <div class="border-b mt-4"></div>
+                            </div>
+
+                            <div class="block">
+                                <div class="inline text-lg font-open-sans-semibold mt-3">Waktu</div>
+                                <div class="float-right clear-both inline">
+                                    <span class="material-icons text-blue-1  expand-more">expand_more</span>
+                                </div>
+                                <div class="border-b mt-4"></div>
+                            </div>
+
+                            <div class="block">
+                                <div class="inline text-lg font-open-sans-semibold mt-3">Maskapai</div>
+                                <div class="float-right clear-both inline">
+                                    <span class="material-icons text-blue-1  expand-more">expand_more</span>
+                                </div>
+                                <div class="border-b mt-4"></div>
+                            </div>
+
+                            <div class="block">
+                                <div class="inline text-lg font-open-sans-semibold mt-3">Fasilitas</div>
+                                <div class="float-right clear-both inline">
+                                    <span class="material-icons text-blue-1  expand-more">expand_more</span>
+                                </div>
+                                <div class="border-b mt-4"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inline-block w-2/3 mx-5">
+                    <div class="w-160 h-max  rounded-md hover:shadow-lg shadow-md bg-white my-5  px-10 py-3 inline-block">
+                        <div class=" rounded-full inline-block  bg-yellow-500 align-middle">
+                            <div class="w-12 h-12 flex justify-center items-center">
+                                <span class="material-icons text-blue-600">
+                                    calendar_month
+                                </span>
+                            </div>
+                        </div>
+                        <div class="inline-block mx-5 align-middle">
+                            <div class="text-xs">Bandingkan tren dengan bulan ini</div>
+                            <div class="">Lihat Kalender Harga</div>
+                        </div>
+                    </div>
+
+                    <div class="w-160 h-max rounded-md hover:shadow-lg shadow-md bg-white my-5  px-10 py-3  inline-block ml-5">
+                        <div class=" rounded-full inline-block  bg-yellow-500 align-middle">
+                            <div class="w-12 h-12 flex justify-center items-center">
+                                <span class="material-icons text-blue-600">
+                                    bar_chart
+                                </span>
+                            </div>
+                        </div>
+                        <div class="inline-block mx-5 align-middle">
+                            <div class="text-xs">Bandingkan tren dengan bulan ini</div>
+                            <div class="">Lihat Grafik Harga</div>
+                        </div>
+                    </div>
+                    
+                    <div class="">
+                        <div class="inline-block text-sm mb-3">Menampilkan 59 penerbangan terbaik dengan harga terbaik</div>
+                        <div class="inline-block float-right clear-both ">
+                            <div class=" inline-block">   
+                                <div class="inline-block">Informasi</div>
+                                <div class="inline-block">
+                                    <span class="material-icons  inline-block align-middle">
+                                        info
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="inline-block">
+                                <div class="inline-block align-middle">urutan</div>
+                                <div class="inline-block align-middle">
+                                    <span class="material-icons  inline-block align-middle">
+                                        sort
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- crodit -->
+                        {{range .datas}}
+                        <div class="block mb-4 bg-white px-4   py-5 rounded-md">
+                            <h1>{{.Airline_name}}</h1>
+                                <div class="bg-white inline-block align-middle">
+                                    <div class="w-20 py-2 border box-border ">
+                                        <img src="/static/img/airlines/{{.Airline_img}}" class="mx-auto w-7 h-7" alt="">
+                                    </div> 
+                                </div>
+
+                                <div class="inline-block align-middle">
+                                    <div class="inline-block align-middle  mx-5">
+                                        <h1 class="text-base  font-open-sans-semibold">{{.Depature_time}}</h1>
+                                        <div class="text-sm">{{.Source_airport_code}}</div>
+                                    </div>
+                                    <div class="inline-block mt-4 text-center align-middle text-xs">
+                                        <div class="">1j 25m</div>
+                                        <hr>
+                                        <div class="">langsung</div>
+                                    </div>
+                                    <div class="inline-block align-middle   mx-5">
+                                        <h1 class="text-base font-medium font-open-sans-semibold">{{.Arrival_time}}</h1>
+                                        <div class="text-sm">{{.Destination_airport_code}}</div>
+                                    </div>
+                                </div>
+
+                                <div class=" inline-block align-middle  ml-5 w-32">
+                                    <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit00gsmenlarge1/string/2020/10/09/6a00a3c1-548f-47de-ba65-e2af47ec90ee-1602261185262-528692e51d079e37d29f86a8ee299caf.png" class="mx-auto w-5 h-5 
+                                    " alt="">
+                                </div>
+
+                                <div class="inline-block float-right clear-both">
+                                    <div class="block">
+                                        <div class="text-sm text-right  line-through text-blue-1" >IDR 1.246.580</div>
+                                        <div class=" text-lg text-orange-1 font-open-sans-semibold">IDR {{.Price}}<span class="text-sm text-gray-1">/pax</span></div>
+                                    </div>
+                                </div>
+                                <div class="block mt-5">
+                                    <div class="text-xs inline-block ml-24">
+                                        <a href="#" class="mx-2 text-blue-1">Detail Penerbangan</a>
+                                        <a href="#" class="mx-2 text-blue-1">Detail Harga</a>
+                                        <a href="#" class="mx-2 text-blue-1">Kebijakan</a>
+                                    </div>
+                                    <div class="inline-block float-right clear-both">
+                                        <a href="/booking-step-1?id={{.Id}}" class="px-7 py-2 bg-yellow-1 font-open-sans-semibold text-base uppercase text-blue-1 rounded-full">Pilih</a>
+                                    </div>
+                                </div>
+                        </div>
+                        {{end}}
+
+
+                        <!-- end -->
+                    </div>
+                </div>
+            </div>
+        </section> 
+         
+        <!-- end -->
+</body>
+</html>

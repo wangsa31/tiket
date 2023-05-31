@@ -1,0 +1,140 @@
+*{
+  font-family: 'Lato', sans-serif;
+}
+.icons {
+    font-size: 30px;
+}
+.splide__slide {
+    position: relative;
+  }
+  
+  .caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 30;
+    bottom: 10;
+    text-align: left;
+    color: black;
+    
+  }
+  .image_size{
+    width: 35%;
+    height: fit-content;
+  }
+
+  
+  .line h1 {
+    overflow: hidden;
+    background-color: white;
+    text-align: center;
+  }
+  
+ .line h1:before,
+ .line h1:after {
+    background-color: #d1d5db;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    border-radius: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 10%;
+  }
+  
+  .line h1:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+  
+ .line h1:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+
+  .background-login-mobile{
+    background-image: url('/static/img/image_login/footer.png');
+  }
+
+  .mb-17{
+    margin-bottom: 3.9rem;
+  }
+  /* Desktop */
+  .background-blue{
+    background: linear-gradient(0deg, rgba(231,242,255,1) 0%, rgba(231,242,255,0.2329306722689075) 100%);
+    opacity: 0.7;
+  }
+  .footer-banner img{
+    position: absolute;
+    z-index: 9999;
+    width: 10%;
+    height:10px;
+    margin-left: -50px;
+  }
+
+  @media (min-width: 640px) {
+    .widht-100 {
+      display: inline;
+       min-width: 100%;
+       min-height: 100%;
+       vertical-align: top;
+    }
+    .height-19{
+      height: 19.2rem;
+    }
+    input{
+      background: none;
+    }
+    .widht-60{
+      width: 63%;
+    }
+   
+    
+}
+
+@media (min-width: 640px)and (max-height: 1024px) {
+  .widht-100 {
+    display: inline;
+     min-width: 100%;
+     min-height: 100%;
+     vertical-align: top;
+  }
+  .height-19{
+    height: 4rem;
+  }
+  .footer-banner img{
+    position: absolute;
+    z-index: 9999;
+    width: 610px;
+    height:295px;
+    margin-left: -50px;
+    overflow: hidden;
+  }
+
+}
+.input {
+  width: 100%;
+  border: none;
+  outline: none !important;
+}
+
+
+
+@media (min-width: 1024px)  {
+  .widht-100 {
+    display: inline;
+     min-width: 100%;
+     min-height: 100%;
+     vertical-align: top;
+  }
+  .height-19{
+    margin-top: 3rem;
+    height: 16.3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .height-19{
+    margin-top: 10rem;
+    height: 18.3rem;
+  }
+}
