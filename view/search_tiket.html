@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="mx-14 py-5">
-                <form action="">
+                <form action="/list-tiket" method="get">
                     <div class="inline md:flex gap-2">
                         <input type="radio" id="label1" name="tets" value="Sekali jalan" class="inline w-4 ml-5 md:ml-0" >
                         <label  for="label1" class="text-sm font-semibold">Sekali jalan</label>
@@ -109,8 +109,8 @@
                     <img src="/static/img/takeoff-the-plane.png" class="inline"  alt="">
                 </div>
                 <div class="inline">
-                    <select name="" id="label3">
-                        <option value="">Jkt</option>
+                    <select name="depature" id="label3">
+                        <option value="2">DPS (Bali, indonesia)</option>
                     </select>
                 </div>
             </div>
@@ -121,8 +121,8 @@
                         <img src="/static/img/plane-landing.png" class="inline" alt="">
                     </div>
                     <div class="inline">
-                        <select name="" id="label4">
-                            <option value="">Jkt</option>
+                        <select name="arrive" id="label4">
+                            <option value="1">JKT (Jakarta, indonesia)</option>
                         </select>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
                             date
                         </div> -->
                         <div class="inline">
-                           <input type="date" id="label5">
+                           <input type="date" name="date_depature" id="label5">
                         </div>
                     </div>
                     <div class="w-fit py-3">

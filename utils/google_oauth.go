@@ -4,7 +4,10 @@ import (
 	"context"
 	"fmt"
 	"io/ioutil"
+	"log"
+	"os"
 
+	"github.com/joho/godotenv"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 )
@@ -16,11 +19,18 @@ type GoogleInfo struct {
 	Picture    string `json:"picture"`
 }
 
+func init() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+}
+
 func GetGoogleAuthConfig() *oauth2.Config {
 	return &oauth2.Config{
-		ClientID:     "1015595862932-17dkqj34ae6leooup24kgfro5on96bod.apps.googleusercontent.com",
-		ClientSecret: "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",
-		RedirectURL:  "http://localhost:8080/auth/google/callback",
+		ClientID:     os.Getenv("CLIENT_ID"),
+		ClientSecret: os.Getenv("CLIENT_SECRET"),
+		RedirectURL:  "http://localhost:3000/auth/google/callback",
 		Scopes: []string{
 			"https://www.googleapis.com/auth/userinfo.email",
 			"https://www.googleapis.com/auth/userinfo.profile",
