@@ -31,6 +31,16 @@ type GetAirline struct {
 	Price                    int
 }
 
+type GetBooking struct {
+	Id                       uint
+	Airline_img              string
+	Airline_name             string
+	Source_airport_name      string
+	Destination_airport_name string
+	Depature_date            string
+	Depature_time            string
+}
+
 func init() {
 	err := godotenv.Load()
 	if err != nil {

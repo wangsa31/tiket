@@ -84,10 +84,11 @@
                     <div class="inline-block align-middle w-max h-10 ml-3 text-base">Log in atau buat akun sekarang untuk dapetin <span class="font-open-sans-semibold"> Blibli Tiket Points</span> dari transaksi ini!<br> <a href="#" class="font-open-sans-semibold text-blue-500"> Log in sekarang</a></div>
                </div>
     
-               <form action="#" method="get" class="w-full">
+               <form action="/payment-methode" method="post" class="w-full">
+                <input type="text" id="flight_id" name="flight_id" value="{{.data.Id}}" hidden>
                 <div class="">
                     <div class="inline-block">
-                        <select id="countries" class=" mr-5 w-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5   dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select id="title_book" name="title_book" class=" mr-5 w-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5   dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Title</option>
                             <option value="Mr">Mr</option>
                             <option value="Mrs">Mrs</option>
@@ -95,7 +96,7 @@
                     </div>
                     <div class="inline-block">
                         <div class="relative">
-                            <input type="text" id="input1" name="inpu1" class="input border p-2.5 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer mr-5"  placeholder="" value="{{.user}}" />
+                            <input type="text" id="input1" name="input1" class="input border p-2.5 text-sm text-gray-900 bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer mr-5"  placeholder="" value="{{.user}}" />
                             <label for="floating_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Nama Lengkap</label>
                         </div>
                     </div>
@@ -103,16 +104,16 @@
 
                     <div class="inline-block mt-4">
                         <div class="relative">
-                            <input type="text" id="input2" name="input2" class="input1  p-2.5 text-sm text-gray-900 border bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer mr-5" placeholder=" " />
+                            <input typeinput3="text" id="input2" name="input2" class="input1  p-2.5 text-sm text-gray-900 border bg-transparent rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer mr-5" placeholder=" " />
                             <label for="floating_outlined" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">Alamat Email</label>
                         </div>
                     </div>
 
                     <div class="inline-block mt-4">
-                        <select id="countries" class=" mr-5 w-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5   dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select id="country_code" name="code_country" class=" mr-5 w-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5   dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Kode Negara</option>
-                            <option value="62">+62</option>
-                            <option value="32">+32</option>
+                            <option value="+62">+62</option>
+                            <option value="+32">+32</option>
                         </select>
                     </div>
                     <div class="inline-block">
@@ -159,7 +160,7 @@
                 </div>
 
                     <div class="block mt-4">
-                        <select id="countries" class=" mr-5 w-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5   dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select id="countries" name="title_passengers" class=" mr-5 w-50  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5   dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Title</option>
                             <option value="Mr">Mr</option>
                             <option value="Mrs">Mrs</option>
